@@ -1,0 +1,78 @@
+#!/bin/bash
+
+for j in $(seq 0 0.1 0.9)
+do
+
+printf "\n\nsudoku Q0 init $j\n\n" >> results_quacq_sudoku
+
+for i in $(seq 1 3)
+do
+./run quacq -sol -fs3 -fc 1 -bp $j -nc -nu -h 2 -domh 1 -f sudoku
+done
+
+printf "\n\ngolomb_8 Q0 init $j\n\n" >> results_quacq_golomb_8
+
+for i in $(seq 1 10)
+do
+./run quacq -sol -fs3 -fc 1 -bp $j -nc -nu -h 2 -domh 1 -f golomb_8
+done
+
+printf "\n\nrlfap Q0 init $j\n\n" >> results_quacq_rlfap
+
+for i in $(seq 1 10)
+do
+./run quacq -sol -fs3 -fc 1 -bp $j -nc -nu -h 2 -domh 1 -f rlfap
+done
+
+done
+
+
+
+printf "\n\nlatin Q0 init 0.2\n\n" >> results_quacq_qcp-10-67-0
+
+for j in $(seq 0.2 0.1 0.2)
+do
+
+for i in $(seq 1 3)
+do
+./run quacq -sol -fs3 -fc 1 -bp $j -nc -nu -h 2 -domh 1 -f qcp-10-67-0
+done
+
+for j in $(seq 0 0.1 0.9)
+do
+
+printf "\n\ngolomb_8 Q1 init $j\n\n" >> results_quacq_golomb_8
+
+for i in $(seq 1 15)
+do
+./run quacq -solp -fs3 -fc 1 -ge -bp $j -nc -nu -h 3 -domh 1 -f golomb_8
+done
+
+printf "\n\ngolomb_8 Q0 init $j\n\n" >> results_quacq_golomb_8
+
+for i in $(seq 1 10)
+do
+./run quacq -sol -fs3 -fc 1 -bp $j -nc -nu -h 2 -domh 1 -f golomb_8
+done
+
+done
+
+#for j in $(seq 0.2 0.1 0.7)
+#do
+
+#printf "\n\nsudoku Q0 init $j\n\n" >> results_quacq_sudoku
+
+#for i in $(seq 1 2)
+#do
+#./run quacq -sol -fs3 -fc 1 -bp $j -nc -nu -h 2 -domh 1 -f sudoku
+#done
+
+#done
+
+#printf "\n\npurdey Q1 init cl\n\n" >> results_quacq_purdey
+
+#for i in $(seq 1 10)
+#do
+#./run quacq -solp -fs3 -fc 1 -ge -nc -nu -h 3 -domh 1 -f purdey -i
+#done
+
