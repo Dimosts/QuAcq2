@@ -73,8 +73,11 @@ use compile.sh to compile. The executable produced is called "run"
 
 
 [1] Christian Bessiere et al. Constraint acquisition via partial queries. In IJCAI, volume 13, pages 475–481, 2013.
+
 [2] Christian Bessiere et al. "Learning Constraints through Partial Queries". Artificial Intelligence 319 (2023): 103896.
+
 [3] Dimosthenis C. Tsouros et al.. Efficient methods for constraint acquisition. In 24th International Conference on Principles and Practice of Constraint Programming, 2018
+
 [4] Dimosthenis C Tsouros and Kostas Stergiou. Efficient multiple constraint acquisition. Constraints, 25(3):180–225, 2020.
 
 
@@ -97,30 +100,41 @@ Examples of benchmark files are given in the
 The numbers corresponding to each relation are the following:
   
 0 : x1 != x2, 1 : x1 = x2, 2 : x1 > x2, 3 : x1 < x2, 4 : x1 >= x2, 5 : x1 <= x2, 
+
 6 : x1 - x2 = 1, 7 : x2 - x1 = 1, 8 : |x1 - x2| = 1,
 9 : |x1 - x2| != |x3 - x4|,
+
 10 : |x1 - x2| = |x3 - x4|,
+
 11 : |x1 - x2| > arg,
+
 12 : |x1 - x2| = arg,
+
 13 : x1 - x2 = x3,
+
 14 : |x1 - x2| > |x3 - x4|,
+
 15 : |x1 - x2| < |x3 - x4|,
+
 16 : |x1 - x2| < arg,
+
 17 : |floor(x1/3) - floor(x2/3)| > arg
+
 18 - 23: x1 != arg, x1 = arg, x1 > arg, x1 < arg, x1 >= arg, x1 <= arg		<- Unary constraints	
 
 <benchmark>_var:
 
-<number_of_variables>
-<var_index> <domain_index>
-<var_index> <domain_index>
-<var_index> <domain_index>
+<number_of_variables> <br>
+<var_index> <domain_index> <br>
+<var_index> <domain_index> <br>
+<var_index> <domain_index> <br>
 ...
 
 
-<benchmark>_dom:
-<number_of_domains>
-<domain_index> <domain_values>
+<benchmark>_dom: 
+
+<number_of_domains> <br>
+<domain_index> <domain_values><br>
 ..
 
 
