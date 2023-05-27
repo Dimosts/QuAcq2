@@ -82,7 +82,7 @@ use compile.sh to compile. The executable produced is called "run"
 
 
 
-##############################################################################################  Benchmark inputs ########################################
+###  Benchmark inputs 
 
 There must be a folder "benchmarks/" in the same path with the exe file and a folder with the same name as the benchmark chosen in it. The benchmark folder must contain:
 a <benchmark>_var file defining the variables existing in the problem, 
@@ -90,7 +90,7 @@ a <benchmark>_dom file defining the domains,
 a <benchmark>_con file if -nu is used, in order to let the system answer the queries without the need of a human user, 
 a <benchmark>_cl file defining the initial constraint network we want to give to the algorithm if -i is used.
 
-###### Structure of benchmark files ###########################
+### Structure of benchmark files 
 
 Examples of benchmark files are given in the 
 <benchmark>_con and <benchmark>_cl files:
